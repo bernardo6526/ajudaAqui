@@ -1,0 +1,49 @@
+Tutorial do Sistema
+
+
+Cadastro/Login:
+
+-Clicar em Cadastre-se Agora
+-Digitar login e senha desejados
+-Selecionar o seu tipo de Usuário
+-Aceitar termos de uso
+-Clicar em Continuar
+-Inserir informações corretamente
+-Clicar em cadastrar-se
+-Clicar em login, digitar informações e entrar
+
+Editar Perfil:
+-Você pode fazer isso clicando em seu nome no canto superior direito da tela
+-Suas informações aparecerão e poderá edita las
+-Quando finalizar clique no botão de alterar
+-Da próxima vez que fizer login todas as informações serão atualizadas corretamente
+
+Clientes:
+-Clicar em faça um pedido
+-Acionar botão de Procurar localização
+-Selecionar Assistente clicando em cima de seu nome
+-Clicar em pedir!
+-Aguardar assistente
+-Após a conclusão do pedido ir para débitos, selecionar qual deseja pagar e clicar no botão.
+-Para feedback selecione assistente e digite sua nota, clicar em enviar
+
+
+Assistentes:
+-Clicar em pedido
+-Selecionar um cliente e ativar
+-Clicar em completar pedido quando estiver concluído
+-Para se associar a uma clinica clique em Clínica
+-Digite o login da clínica e clique em associar
+
+Clínicas:
+-Para cadastrar assistentes clique nessa opção
+-Inserir informações corretamente
+-Clicar em cadastrar
+-Para remover um assistente clique em editar assistentes
+-Selecione aquele que deseja remover e clique em excluir
+
+Admin:
+-Clique em relatórios para ver informações do sistema
+-Selecione um parâmetro e clique em buscar(pode digitar também no buscar caso queira ser mais específico)
+-Quando o relatório for gerado aparecerá um botão onde clicando nele você poderá imprimir os dados
+

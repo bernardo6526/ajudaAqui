@@ -1,0 +1,206 @@
+
+<div class="container-fluid" style="margin-top:50px;">
+	<div class="row">
+		<div id="cadastro" class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-6 col-lg-offset-3 panel panel-default">
+			<h3 class="text-center">Cadastre-se</h3>
+			<p class="text-center">Participe do Ajuda aqui! como assistente</p>
+			<div class="row">
+			<div class="panel-body">
+				<form action="BLL/cadastroAssistenteassoc.php" id="cadastroAssistente" method="post">
+					<div class="form-group col-xs-6">
+						<input  type="text" class="form-control" name="login" placeholder="Login" required>
+					</div>
+					<div class="form-group col-xs-6">
+						<input  type="password" class="form-control" name="senha" placeholder="Senha" required>
+					</div>
+					<div class="form-group col-xs-6">
+						<input id="nome" type="text" class="form-control" name="nome" placeholder="Nome">
+					</div>
+					<div class="form-group col-xs-6">
+						<input id="sobrenome" type="text" class="form-control" name="sobrenome" placeholder="Sobrenome">
+					</div>
+
+					<div class="form-group col-xs-12">
+						<input id="email" type="email" class="form-control" name="email" placeholder="Email">
+					</div>
+
+					<div class="form-group col-xs-6">
+						<input placeholder="Nascimento" class="form-control" name="nascimento" type="text" onfocus="(this.type='date')">
+					</div>
+					
+					<div class="form-group col-xs-6">
+						<input placeholder="CPF" id="cpf" class="form-control" name="cpf" type="text" >
+					</div>
+					
+					<div class="form-group col-xs-6">
+						<input id="rg" type="text" class="form-control" name="rg" placeholder="RG">
+					</div>
+					
+					<div class="form-group col-xs-6">
+						<select name="tipo" class="form-control" id="tipo">
+							<option value="" disabled hidden selected>Tipo de Profissão</option>
+							<option value="enfermeiro">Enfermagem</option>
+							<option value="fisioterapeuta">Fisioterapia</option> 
+						</select>
+					</div>
+					
+					<div class="form-group col-xs-6">
+						<input id="nmroprof" type="text" class="form-control" name="nmroprof" placeholder="Número de Identifição Profissional">
+					</div>
+					
+					<div class="form-group col-xs-6">
+						<input id="telefone" type="text" class="form-control" name="telefone" placeholder="Telefone">
+					</div>
+					
+					<div class="form-group col-xs-6">
+						<input id="cep" type="text" class="form-control" name="cep" placeholder="CEP">
+					</div>
+					<div class="form-group col-xs-6">
+						<input id="bairro" type="text" class="form-control" style="color: #999" disabled="" name="bairro" placeholder="Bairro">
+					</div>
+					<div class="form-group col-xs-12">
+						<input id="logradouro" type="text" class="form-control" style="color: #999" disabled="" name="logradouro" placeholder="Logradouro">
+					</div>
+					<div class="form-group col-xs-6">
+						<input id="cidade" type="text" class="form-control" style="color: #999" disabled="" name="cidade" placeholder="Cidade">
+					</div>
+					<div class="form-group col-xs-6">
+						<input id="estado" type="text" class="form-control" style="color: #999" disabled="" name="estado" placeholder="Estado">
+					</div>
+					<div class="form-group col-xs-6">
+						<input id="numero" type="text" class="form-control" name="numero" placeholder="Número">
+					</div>
+					<div class="form-group col-xs-12">
+						<input id="complemento" type="text" class="form-control" name="complemento" placeholder="Complemento">
+					</div>
+					
+						<label for="termos" class="text-left col-xs-12">
+							<input type="checkbox" name="termos" id="termos"> Aceito os <a class="cor" href="../Ajuda-Aqui/termos.php">Termos de uso</a>
+						</label>
+						<div class="col-xs-12">	
+							<input type="submit" class="col-xs-12  btn btn-primary btn-default" style="margin-top:20px;" value="Cadastrar-se">
+						</div>
+				</form>
+			</div>
+		</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- SCRIPTS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="js/jquery.mask.js"></script>
+	<script src="js/jquery.validate.js"></script>
+	<script>
+		$("#cep").mask("99999-999");
+		$("#rg").mask("99.999.999");
+	    $("#cpf").mask("999.999.999-99");
+
+
+		var options =  {onKeyPress: function(telefone, e, field, options) {
+			var masks = ['(00)00000-0000', '(00)0000-00000'];
+			mask = (telefone.length>13) ? masks[0] : masks[1];
+
+			$('#telefone').mask(mask, options);
+		}
+	};
+		$("#telefone").mask("(00)0000-00000", options);
+
+		// var formulario = $("#cadastroAssistente");
+
+		// $('#login').on("keyup", function() {
+		// 	requestAjax(formulario);
+		// });
+		
+		var formulario = $("#cadastroAssistente");
+
+		$('#login').on("keyup", function() {
+			requestAjax(formulario);
+		});
+		
+		
+		$("#cadastroAssistente").validate({
+			rules: {
+				nome: "required",
+				sobrenome: "required",
+				email: {
+					required: true,
+					email: true,
+					remote: {
+						url: "BLL/checkEmail.php",
+						data: {
+							tabela: "assistente"
+						}
+					}
+				},
+				nascimento: "required",
+				cpf: "required",
+				rg: "required",
+				cep: {
+					required: true,
+					remote: "BLL/checkCep.php"
+				},
+				numero: "required",
+				telefone: "required",
+				tipo: "required",
+				nmroprof: "required",
+				termos: "required"
+			},
+			messages: {
+				nome: "Insira seu Nome",
+				sobrenome: "Insira seu Sobrenome",
+
+				email: {
+					required: "Insira um Email",
+					email: "Email Inválido",
+					remote: "Email Já Tomado"
+				},
+				nascimento: "Insira sua Data de Nascimento",
+				cpf: "Insira seu CPF",
+				rg: "Insira seu RG",
+				cep: {
+					required: "Insira seu CEP",
+					remote: "CEP Inválido"
+				},
+				numero: "Insira seu Número",
+				telefone: "Insira um Telefone",
+				tipo: "Marque sua Profissão",
+				nmroprof: "Insira seu Número Profissionalizante",
+				termos: "Aceite os Termos De Uso"
+			},
+			submitHandler: function(form) {
+				$.ajax({
+					url: $(form).attr('action'),
+					method: $(form).attr('method'),
+					data: $('form .form-group :input').serializeArray(),
+					success: function () {
+						alert('Bem Vindo ' + $("input[name='nome']").val() + "!");
+						window.location.replace('index.html');
+					},
+					error: function() {
+						alert('ERRO FATAL CARALHO FUDEU FORTE');
+						form.submit();
+					}
+				})
+			}
+		});
+		$(document).ready(function() {
+			$("#cep").on('blur', function(ev) {
+				console.log(ev.currentTarget.value);
+
+				$.getJSON({
+					url:"http://api.postmon.com.br/v1/cep/"+ ev.currentTarget.value +"?format=json",
+					success: function(data) {
+						$("#bairro").val(data.bairro);
+						$("#logradouro").val(data.logradouro);
+						$("#cidade").val(data.cidade);
+						$("#estado").val(data.estado_info.nome);
+					}
+				});
+			});
+		});
+	</script>
+
+<!-- /SCRIPTS -->

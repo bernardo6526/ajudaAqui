@@ -1,0 +1,99 @@
+<html>
+<head>
+  <title>Ajuda Aqui!</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/estilo.css">
+  <style>
+  	
+  </style>
+</head>
+<body data-spy="scroll" id="cadastro" data-target="#navbar-principal">
+	<nav id="navbar-cadastro" class="navbar navbar-static-top navbar-default">
+  <div class="container-fluid">
+    <div class="text-center">
+      <a class="" href="./">
+      	<img src="img/logo2.png" alt="logo" height="30px">
+      </a>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid background-image">
+	<div class="row">
+		<div id="alguem-le-isso" class="col-lg-offset-8 col-lg-3 col-sm-offset-2 col-sm-8">
+			<h2 class="text-shadow"><b>Cadastre-se     </b><span><img src="img/load.gif" style="display:none"></span></h2>
+      <p class="lead">Insira suas informações de cadastro e selecione qual será o seu tipo de usuário.</p>
+      <form method="post">
+        <div class="form-group">
+          <input type="text" name="login" id="login" class="form-control round" placeholder="login">
+        </div>
+        <div class="form-group">
+          <input type="password" name="senha" id="senha" class="form-control round" placeholder="senha">
+        </div>
+        <select name="tipo" class="form-control round">
+          <option value="Tipo" selected disabled hidden>Tipo</option>
+          <option value="cadastroCliente.html">Cliente</option>
+          <option value="cadastroAssistente.html">Assistente</option>
+          <option value="cadastroClinica.html">Gerente</option>
+        </select>
+        <label for="termos">
+          <input type="checkbox" name="termos" class="" id="termos"> Aceito os <a class="cor" href="../Ajuda-Aqui/termos.php">Termos de uso</a>
+        </label>
+        <input type="submit" value="Continuar" style="top: 30px;" class="btn col-xs-12 btn-default btn-primary btn-lg">
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<!-- SCRIPTS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="js/jquery.validate.js"></script>
+  <script>
+    $("form").validate({
+      rules: {
+        login: {
+          required: true,
+          minlength: 4,
+          remote: "BLL/checkLogin.php"
+        },
+        senha: {
+          required: true,
+          minlength: 3
+        },
+        tipo: "required",
+        termos: "required"
+      },
+      messages: {
+        login: {
+          required: "Insira um Login",
+          minlength: "Login muito Curto",
+          remote: "Login já tomado"
+        },
+        senha: {
+          required: "Insira uma Senha",
+          minlength: "Senha muito Curta"
+        },
+        tipo: "Selecione um Tipo de Usuário",
+        termos: "Aceite os Termos De Uso"
+      },
+      submitHandler: function(form) {
+        $.get({
+          url: "BLL/sessionWrite.php",
+          data: $("form :text, :password").serializeArray(),
+          success: function() {
+            window.location.replace($("select").val());
+          },
+          error: function() {
+            console.log("erro");
+          }
+        })
+      }
+    });
+  </script>
+<!-- /SCRIPTS -->
+</body>
+</html>

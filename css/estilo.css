@@ -1,0 +1,512 @@
+/*PLUGIN DAS FONT*/
+@import 'https://fonts.googleapis.com/css?family=Open+Sans';
+.text-left-not-xs, .text-left-not-sm, .text-left-not-md, .text-left-not-lg {
+    text-align: left;
+}
+.text-center-not-xs, .text-center-not-sm, .text-center-not-md, .text-center-not-lg {
+    text-align: center;
+}
+.text-right-not-xs, .text-right-not-sm, .text-right-not-md, .text-right-not-lg {
+    text-align: right;
+}
+.text-justify-not-xs, .text-justify-not-sm, .text-justify-not-md, .text-justify-not-lg {
+    text-align: justify;
+}
+
+@media (max-width: 767px) {
+    .text-left-not-xs, .text-center-not-xs, .text-right-not-xs, .text-justify-not-xs {
+        text-align: inherit;
+    }
+    .text-left-xs {
+        text-align: left;
+    }
+    .text-center-xs {
+        text-align: center;
+    }
+    .text-right-xs {
+        text-align: right;
+    }
+    .text-justify-xs {
+        text-align: justify;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .text-left-not-sm, .text-center-not-sm, .text-right-not-sm, .text-justify-not-sm {
+        text-align: inherit;
+    }
+    .text-left-sm {
+        text-align: left;
+    }
+    .text-center-sm {
+        text-align: center;
+    }
+    .text-right-sm {
+        text-align: right;
+    }
+    .text-justify-sm {
+        text-align: justify;
+    }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+    .text-left-not-md, .text-center-not-md, .text-right-not-md, .text-justify-not-md {
+        text-align: inherit;
+    }
+    .text-left-md {
+        text-align: left;
+    }
+    .text-center-md {
+        text-align: center;
+    }
+    .text-right-md {
+        text-align: right;
+    }
+    .text-justify-md {
+        text-align: justify;
+    }
+}
+@media (min-width: 1200px) {
+    .text-left-not-lg, .text-center-not-lg, .text-right-not-lg, .text-justify-not-lg {
+        text-align: inherit;
+    }
+    .text-left-lg {
+        text-align: left;
+    }
+    .text-center-lg {
+        text-align: center;
+    }
+    .text-right-lg {
+        text-align: right;
+    }
+    .text-justify-lg {
+        text-align: justify;
+    }
+}
+
+/* #####################################################################
+   #
+   #   Project       : Modal Login with jQuery Effects
+   #   Author        : Rodrigo Amarante (rodrigockamarante)
+   #   Version       : 1.0
+   #   Created       : 07/28/2015
+   #   Last Change   : 08/02/2015
+   #
+   ##################################################################### */
+
+#login-modal {
+  z-index: 2000;
+}
+#login-modal .modal-dialog {
+    width: 350px;
+}
+
+#login-modal input[type=text], input[type=password] {
+  margin-top: 10px;
+}
+
+#div-login-msg,
+#div-lost-msg,
+#div-register-msg {
+    border: 1px solid #dadfe1;
+    height: 30px;
+    line-height: 28px;
+    transition: all ease-in-out 500ms;
+}
+
+#div-login-msg.success,
+#div-lost-msg.success,
+#div-register-msg.success {
+    border: 1px solid #68c3a3;
+    background-color: #c8f7c5;
+}
+
+#div-login-msg.error,
+#div-lost-msg.error,
+#div-register-msg.error {
+    border: 1px solid #eb575b;
+    background-color: #ffcad1;
+}
+
+#icon-login-msg,
+#icon-lost-msg,
+#icon-register-msg {
+    width: 30px;
+    float: left;
+    line-height: 28px;
+    text-align: center;
+    background-color: #dadfe1;
+    margin-right: 5px;
+    transition: all ease-in-out 500ms;
+}
+
+#icon-login-msg.success,
+#icon-lost-msg.success,
+#icon-register-msg.success {
+    background-color: #68c3a3 !important;
+}
+
+#icon-login-msg.error,
+#icon-lost-msg.error,
+#icon-register-msg.error {
+    background-color: #eb575b !important;
+}
+
+#img_logo {
+    max-height: 100px;
+    max-width: 100px;
+}
+
+/* #########################################
+   #    override the bootstrap configs     #
+   ######################################### */
+
+.modal-backdrop.in {
+    filter: alpha(opacity=50);
+    opacity: .8;
+}
+
+.modal-content {
+    background-color: #ececec;
+    border: 1px solid #bdc3c7;
+    border-radius: 0px;
+    outline: 0;
+}
+
+.modal-header {
+    min-height: 16.43px;
+    padding: 15px 15px 15px 15px;
+    border-bottom: 0px;
+}
+
+.modal-body {
+    position: relative;
+    padding: 5px 15px 5px 15px;
+}
+
+.modal-footer {
+    padding: 15px 15px 15px 15px;
+    text-align: left;
+    border-top: 0px;
+}
+
+.checkbox {
+    margin-bottom: 0px;
+}
+
+.btn-link {
+    padding: 5px 10px 0px 0px;
+    color: #95a5a6;
+}
+
+.btn-link:hover, .btn-link:focus {
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+.glyphicon {
+    top: 0px;
+}
+
+.form-control {
+  border-radius: 0px;
+}
+
+*{
+  font-family: 'Open Sans', sans-serif;
+  color: #333447;
+}
+.navbar{
+  margin-bottom: 0px;
+  font-size: 15px;
+  
+}
+
+.jumbotron {
+  height: 360px;
+  color: #F3F5F5;
+  background-image: url("../img/ajuda1.jpg");
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-shadow: #222 0 1px 1px;
+  border-radius: 0px !important;
+  margin-bottom: 0px;
+  transition: 0.2s;
+}
+.bg2{
+  
+}
+
+div.jumbotron>h1{
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.navbar-default .navbar-nav>.active>a{
+  padding: 13px 30px;
+}
+.navbar-nav{
+  padding: 7px 0px 6px 0px; 
+  position: relative;
+}
+.navbar-nav>li>a{
+  margin-right: 10px;
+}
+.navbar-default .navbar-nav>li>a:focus,
+.navbar-default .navbar-nav>li>a:hover
+{
+  color: #1985a1;
+}
+
+.active>a{
+  background-color: #1985a1 !important;
+  color: #F3F5F5 !important;
+}
+
+.btn-primary{
+  background-color: #1985a1 !important;
+}
+.btn-primary:hover{
+  border-color: #1985a1 !important;
+}
+
+div.footer {
+  background-color: #333447;
+  margin-top: 60px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+div.footer *{
+  color: #F3F5F5;
+}
+#senha{
+  margin-top: 0px;
+}
+#logo-bottom{
+  margin-bottom: 10px;
+}
+#login_lost_btn{
+  margin: 0px;
+  padding: 0px;
+}
+div.checkbox{
+  display: inline;
+}
+.btn-inverse{
+  background-color: rgba(25, 133, 161, 0) !important;
+  color: #1985a1 !important;
+  border-color: #1985a1;
+}
+.btn-inverse:hover{
+  background-color: rgba(25, 133, 161, 0.1) !important;
+  border-color: #1985a1;
+}
+
+.cor{
+  color: #1985a1 !important;
+}
+
+i{
+  margin: 0px 6.6px;
+}
+#creditos{
+  float: right;
+}
+
+.chapa{
+  background-color: #1985a1;
+  padding: 10px 0px;
+}
+.btn-branco, .btn-branco:hover, .btn-branco:visited{
+  background-color: rgba(255,255,255,0);
+  border: 1px solid #fff;
+  color: #fff;
+  transition: background 20ms ease-in;
+}
+.btn-branco:active {
+  background-color: rgba(255,255,255,0.25);
+  text-decoration: none;
+}
+.branco{
+  color: #F3F5F5;
+}
+.chapa>span>h2{
+  display: inline;
+  vertical-align: middle;
+}
+
+#navbar-principal{
+  border-radius: 0px;
+}
+span.form-control-feedback{
+  right: 15px;
+}
+.navbar-toggle{
+  border: 0px;
+}
+.navbar-toggle:hover :focus{
+  border: 0px;
+  background-color: rgba(0,0,0,0) !important;
+}
+
+#navbar-cadastro{
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    border: 0px;
+    background: linear-gradient(rgba(60,60,60,0.25),rgba(60,60,60,0));
+    font-weight: bold;
+    font-size: 16px;
+  }
+  .navbar-brand{
+    margin-right: 10px;
+  }
+  #navbar-cadastro .navbar-nav > li > a{
+    color: #F3F5F5 ;
+  }
+  #navbar-cadastro .navbar-nav>.active>a {
+    border-radius: 0px !important;
+    background-color: rgba(255,255,255,0) !important;
+    border-bottom: 5px solid #1985a1 !important;
+    padding-bottom: 10px !important;
+    /*color: #1985a1 !important;*/
+    transition: border, 0.05s;
+    transition-timing-function: linear; 
+  }
+
+@media (min-width: 768px){
+  #navbar-principal{
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    border: 0px;
+    background: linear-gradient(rgba(60,60,60,0.25),rgba(60,60,60,0));
+    font-weight: bold;
+    font-size: 16px;
+  }
+  .navbar-brand{
+    margin-right: 10px;
+  }
+  #navbar-principal .navbar-nav > li > a{
+    color: #F3F5F5 ;
+  }
+  #navbar-principal .navbar-nav>.active>a {
+    border-radius: 0px !important;
+    background-color: rgba(255,255,255,0) !important;
+    border-bottom: 5px solid #1985a1 !important;
+    padding-bottom: 10px !important;
+    /*color: #1985a1 !important;*/
+    transition: border, 0.05s;
+    transition-timing-function: linear; 
+  }
+  #navbar-principal.affix{
+    position: fixed;
+    right: 0px;
+    left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    border: 0px;
+    background: #f5f5f5;
+    font-size: 13px;
+    -webkit-transition: all 1s; /* For Safari 3.1 to 6.0 */
+    transition: height 0.3s;
+    height: 55px;
+  }
+  #navbar-principal.affix .navbar-nav > li > a,
+  #navbar-principal.affix .navbar-nav>.active>a
+  {
+    color: #777;
+  }
+  #navbar-principal.affix .navbar-nav>.active>a{
+    color: #777 !important;
+  }
+}
+.navbar-cadastro>div.container-fluid {
+  width: 100%;
+}
+.navbar-cadastro>div.container-fluid>div{
+  padding: 10px;
+}
+.navbar-cadastro{
+  border-radius: 0px;
+  background: #333447;
+  border: 0px;
+}
+body#cadastro{
+ /* background: #f5f5f5;*/
+}
+
+@media (max-width: 766px){
+  div#cadastro{
+    margin-bottom: -60px;
+  }
+}
+  @media (min-width: 766px){
+  div#cadastro{
+    margin-top: 30px;
+  }
+}
+
+#success{
+  color: green;
+}
+#error{
+  color: red;
+
+}
+label.error{
+  color: #f00;
+  display: inline;
+  position: initial;
+  right:20px;
+  top: 20px;
+  font-size: 9px;
+}
+.background-image {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+  display: block;
+  background-image: url('../img/bg-cadastro.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+div #alguem-le-isso{
+    background-color: #f5f5f5;
+    color: #333447;
+    margin-bottom: 30px;
+    margin-top: 90px;
+    border-radius: 10px;
+    height: 40em;
+    box-shadow: #728099 0 1px 5px 0;
+}
+.shadow-text{
+  text-shadow: #ccc 0px 1px 1px;
+}
+.round{
+  border-radius: 4px;
+}
+
+input.form-control,
+select.form-control
+{
+  font-size: 16px;
+  height: 40px;
+  padding: 8px;
+}
+#termos{
+  margin-top:15px;
+}
